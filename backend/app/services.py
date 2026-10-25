@@ -1,8 +1,3 @@
-"""
-Business logic layer — maps each task to its prompt template.
-Separated from routing (main.py) and LLM transport (llm_client.py).
-"""
-
 from .llm_client import generate
 
 PROMPTS = {

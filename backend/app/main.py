@@ -1,8 +1,3 @@
-"""
-AI Workbench API — FastAPI application.
-Routing layer only: receives requests, delegates to services, returns responses.
-"""
-
 from fastapi import FastAPI, HTTPException
 from .models import TextRequest, TextResponse, HealthResponse
 from .services import process_task
@@ -20,13 +15,6 @@ def health_check():
     info = get_provider_info()
     return HealthResponse(status="healthy", **info)
 
-@app.get("/")
-def home():
-    return {
-        "message": "Welcome to AI Workbench API",
-        "status": "running",
-        "documentation": "/docs"
-    }
 
 @app.post("/summarize", response_model=TextResponse)
 def summarize(req: TextRequest):

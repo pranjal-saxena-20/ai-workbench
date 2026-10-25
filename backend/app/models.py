@@ -1,8 +1,3 @@
-"""
-Request and response models for the AI Workbench API.
-Pydantic enforces type safety at the API boundary.
-"""
-
 from typing import Optional
 
 from pydantic import BaseModel, Field

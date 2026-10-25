@@ -14,10 +14,6 @@ MODEL = os.getenv("LLM_MODEL", "gpt-4.1-mini")
 
 
 def generate(task_prompt: str, user_text: str) -> dict:
-    """
-    Send a completion request to the configured LLM provider.
-    Returns dict with 'content' and 'tokens_used' keys.
-    """
     if PROVIDER == "openai":
         return _call_openai(task_prompt, user_text)
     else:
